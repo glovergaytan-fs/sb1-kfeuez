@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --dropdown-max-height: 300px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-mono {
+  font-family: 'Roboto Mono', monospace;
+}
+
+.ingredient-dropdown {
+  max-height: var(--dropdown-max-height);
+  overflow-y: auto;
+  width: 100%;
+  max-width: 300px;
+}
+
+.ingredient-dropdown::-webkit-scrollbar {
+  width: 8px;
+}
+
+.ingredient-dropdown::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.ingredient-dropdown::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.ingredient-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+@layer base {
+  h1 {
+    @apply text-4xl font-bold mb-4;
+  }
+  h2 {
+    @apply text-3xl font-semibold mb-3;
+  }
+  h3 {
+    @apply text-2xl font-medium mb-2;
+  }
+  h4 {
+    @apply text-xl font-medium mb-2;
+  }
+  p {
+    @apply text-base mb-2;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md transition-colors;
+  }
+  .btn-primary {
+    @apply bg-yellow-400 text-purple-900 hover:bg-yellow-300 dark:bg-yellow-600 dark:text-gray-900 dark:hover:bg-yellow-500;
+  }
+  .input {
+    @apply w-full p-2 bg-white bg-opacity-20 border-b border-white text-white placeholder-gray-300 rounded-md dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400;
+  }
+}
+
+.dark {
+  @apply bg-gray-900 text-white;
+}
